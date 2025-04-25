@@ -1,7 +1,9 @@
 # E-Commerce Product Catalog Database Schema
 
 This schema defines the core structure for an e-commerce product catalog system, designed with extensibility and auditability in mind. It includes tables for managing products, brands, categories, variations, attributes, and more.
-
+-----
+![Bookstore Schema](assets/ERD.png)
+-----
 ## Key Features
 
 - **Audit Fields**: Every table includes fields for tracking record creation, updates, and soft-deletion:
