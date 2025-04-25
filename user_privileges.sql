@@ -44,4 +44,4 @@ GRANT SELECT, INSERT, UPDATE, DELETE ON EcommerceDB.roles TO 'user_manager'@'loc
 GRANT SELECT, INSERT, UPDATE, DELETE ON EcommerceDB.user_roles TO 'user_manager'@'localhost';
 
 -- Apply the privileges
-FLUSH PRIVILEGES;
+FLUSH PRIVILEGES; 
