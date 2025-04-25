@@ -1,9 +1,9 @@
 # E-Commerce Product Catalog Database Schema
 
-This schema defines the core structure for an e-commerce product catalog system, designed with extensibility and auditability in mind. It includes tables for managing products, brands, categories, variations, attributes, and more.
------
-![Bookstore Schema](assets/ERD.png)
------
+This schema defines the core structure for an e-commerce product catalog system, designed with extensibility, auditability, and performance in mind. It includes tables for managing products, brands, categories, variations, attributes, and more.
+
+![E-Commerce Schema](assets/ERD.png)
+
 ## Key Features
 
 - **Audit Fields**: Every table includes fields for tracking record creation, updates, and soft-deletion:
@@ -23,23 +23,34 @@ This schema defines the core structure for an e-commerce product catalog system,
 
 ## Tables Included
 
-- `brand`: Brand information.
-- `product_category`: Category each product falls under.
-- `product`: Core product data including brand and category associations.
-- `product_image`: Images associated with a product.
-- `color`: Color options for product variations.
-- `size_category`, `size_option`: Size structure for variations.
-- `product_variation`: Combination of color and size for a specific product.
-- `product_item`: Individual SKUs tied to a variation with stock data.
-- `attribute_type`, `attribute_category`: Metadata structure for attributes.
-- `product_attribute`: Custom attributes per product.
+- **`brand`**: Stores brand information with unique names.
+- **`product_category`**: Defines categories for products.
+- **`product`**: Contains core product data, including brand and category associations.
+- **`product_image`**: Manages images associated with products.
+- **`color`**: Lists color options for product variations.
+- **`size_category`** and **`size_option`**: Define size structures for variations.
+- **`product_variation`**: Represents combinations of color and size for specific products.
+- **`product_item`**: Details individual SKUs tied to variations with stock data.
+- **`attribute_type`** and **`attribute_category`**: Provide metadata structure for attributes.
+- **`product_attribute`**: Stores custom attributes per product.
 
 ## Usage
 
-Use this schema as a starting point for building scalable, feature-rich e-commerce platforms. The schema is compatible with tools like dbdiagram.io for easy visualization and collaboration.
+This schema serves as a robust foundation for building scalable, feature-rich e-commerce platforms. It is compatible with tools like dbdiagram.io for easy visualization and collaboration.
 
 ## Notes
 
 - Foreign keys to `created_by`, `updated_by`, and `deleted_by` are intended to reference a `users` table.
 - Soft deletes are implemented via the `deleted_at` field; actual deletions are not enforced by the schema.
+- Consider indexing frequently queried columns for improved performance.
+- Ensure application-level input validation and sanitation to prevent SQL injection attacks.
 
+## Getting Started
+
+1. **Database Setup**: Use the provided SQL script to create the database schema.
+2. **Integration**: Connect the schema with your application backend to manage e-commerce operations.
+3. **Customization**: Extend the schema as needed to accommodate additional features or business logic.
+
+## Contributing
+
+Contributions are welcome! Please fork the repository and submit a pull request with your improvements.
