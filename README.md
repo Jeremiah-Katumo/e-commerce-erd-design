@@ -33,6 +33,9 @@ This schema defines the core structure for an e-commerce product catalog system,
 - **`product_item`**: Details individual SKUs tied to variations with stock data.
 - **`attribute_type`** and **`attribute_category`**: Provide metadata structure for attributes.
 - **`product_attribute`**: Stores custom attributes per product.
+- **`users`**: Manages user accounts for the system.
+- **`roles`**: Defines different user roles with varying permissions.
+- **`user_roles`**: Maps users to their assigned roles.
 
 ## Usage
 
@@ -45,11 +48,24 @@ This schema serves as a robust foundation for building scalable, feature-rich e-
 - Consider indexing frequently queried columns for improved performance.
 - Ensure application-level input validation and sanitation to prevent SQL injection attacks.
 
+## Database Users and Privileges
+
+The system includes several predefined database users with specific access levels:
+
+- **Admin User**: Has full privileges on all database tables.
+- **Product Manager**: Can manage all product-related information including categories, brands, and attributes.
+- **Inventory Manager**: Focused on stock management with limited access to product data.
+- **Sales User**: Has read-only access to product information for customer service.
+- **User Manager**: Manages user accounts and role assignments.
+
+These user roles follow the principle of least privilege, ensuring each user has only the access necessary for their job function. The user creation and privilege assignments are defined in the `user_privileges.sql` file.
+
 ## Getting Started
 
 1. **Database Setup**: Use the provided SQL script to create the database schema.
-2. **Integration**: Connect the schema with your application backend to manage e-commerce operations.
-3. **Customization**: Extend the schema as needed to accommodate additional features or business logic.
+2. **User Setup**: Run the `user_privileges.sql` script to create database users with appropriate access levels.
+3. **Integration**: Connect the schema with your application backend to manage e-commerce operations.
+4. **Customization**: Extend the schema as needed to accommodate additional features or business logic.
 
 ## Contributing
 
